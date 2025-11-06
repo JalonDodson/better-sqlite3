@@ -46,7 +46,8 @@ class Backup;
 #include "objects/statement-iterator.cpp"
 
 NODE_MODULE_INIT(/* exports, context */) {
-	v8::Isolate* isolate = context->GetIsolate();
+//	v8::Isolate* isolate = context->GetIsolate();
+	v8::Isolate* isolate = v8::Isolate::GetCurrent();
 	v8::HandleScope scope(isolate);
 	Addon::ConfigureURI();
 
